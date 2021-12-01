@@ -207,7 +207,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
             return
         }
         
-        let path = "https://viacep.com.br/ws/\(searchBarText)/json/"
+        let path = "https://viacep.com.br/ws/\(searchBarText.trimmingCharacters(in: .whitespacesAndNewlines))/json/"
         URLSession.shared.dataTask(with: URL(string: path)!, completionHandler: {data, response, error in
             guard let data = data else {
                 return
